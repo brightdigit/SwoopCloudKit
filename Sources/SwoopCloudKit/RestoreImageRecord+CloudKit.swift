@@ -4,14 +4,14 @@
 //
 
 #if canImport(CloudKit)
-  internal import BushelFoundation
+  internal import SwoopKit
   internal import CloudKit
   internal import Foundation
 
   extension RestoreImageRecord {
     /// Maps a public-database `RestoreImage` record onto the shared model.
     ///
-    /// Traps handled here, all of them driven by BushelCloud's `schema.ckdb`:
+    /// Traps handled here, all of them driven by SwoopMistKit's `schema.ckdb`:
     /// `downloadURL` is a `STRING` rather than a `CKAsset`; `isSigned` and
     /// `isPrerelease` are `INT64`; and `releaseDate` falls back to
     /// `sourceUpdatedAt` when a source did not publish one.

@@ -38,5 +38,15 @@
       self.integerValue(forKey: key).map { $0 != 0 }
     }
     // swiftlint:enable discouraged_optional_boolean
+
+    /// Reads a `REFERENCE` field as the referenced record's name, which is
+    /// how the SwoopKit models store references (for example
+    /// `"XcodeVersion-27A5318c"`).
+    ///
+    /// - Parameter key: The record field name.
+    /// - Returns: `nil` when the field is absent or not a reference.
+    internal func referenceName(forKey key: String) -> String? {
+      (self[key] as? CKRecord.Reference)?.recordID.recordName
+    }
   }
 #endif

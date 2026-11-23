@@ -3,7 +3,7 @@
 // Copyright (c) 2025 BrightDigit.
 //
 
-public import BushelFoundation
+public import SwoopKit
 
 /// A single `RestoreImage` record read from the public CloudKit database.
 ///
@@ -13,7 +13,7 @@ public struct CloudKitRestoreImage: Identifiable, Sendable {
   /// The CloudKit record name, which is `RestoreImage-{buildNumber}`.
   public let id: String
 
-  /// The record decoded into the shared `BushelFoundation` model.
+  /// The record decoded into the shared SwoopKit model.
   public let record: RestoreImageRecord
 
   /// Creates a fetched restore image.

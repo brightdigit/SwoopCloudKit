@@ -3,27 +3,42 @@
 import PackageDescription
 
 let package = Package(
-  name: "BushelCatalog",
+  name: "SwoopCloudKit",
   platforms: [
     .macOS(.v14)
   ],
   products: [
-    .library(name: "BushelCatalog", targets: ["BushelCatalog"])
+    .library(name: "SwoopCloudKit", targets: ["SwoopCloudKit"])
   ],
   dependencies: [
-    // `simulator` branch overlay: build against the sibling BushelKit subrepo.
-    // Upstream `main` uses the BushelKit URL instead.
-    .package(name: "BushelKit", path: "../BushelKit")
+    // `simulator` branch overlay: build against the sibling SwoopKit subrepo.
+    // Upstream `main` uses the SwoopKit URL instead.
+    .package(name: "SwoopKit", path: "../SwoopKit")
   ],
   targets: [
     .target(
-      name: "BushelCatalog",
+      name: "SwoopCloudKit",
       dependencies: [
-        .product(name: "BushelFoundation", package: "BushelKit")
+        .product(name: "SwoopKit", package: "SwoopKit")
       ],
       swiftSettings: [
         .enableUpcomingFeature("InternalImportsByDefault")
       ]
-    )
+    ),
+    .testTarget(
+      name: "SwoopCloudKitTests",
+      dependencies: [
+        "SwoopCloudKit",
+        .product(name: "SwoopKit", package: "SwoopKit"),
+      ],
+      resources: [
+        // Release-data fixtures: snapshots and a cache file written before
+        // the snapshot moved here from Stewed.
+        .copy("Resources")
+      ],
+      swiftSettings: [
+        .enableUpcomingFeature("InternalImportsByDefault")
+      ]
+    ),
   ]
 )

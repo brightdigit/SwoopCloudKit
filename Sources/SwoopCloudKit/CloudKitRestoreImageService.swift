@@ -4,15 +4,15 @@
 //
 
 #if canImport(CloudKit)
-  internal import BushelFoundation
+  internal import SwoopKit
   internal import CloudKit
   internal import Foundation
 
   /// A read-only client for the `RestoreImage` record type in the **public**
   /// database of `iCloud.com.brightdigit.Bushel`.
   ///
-  /// Transport is native `CloudKit.framework` rather than `BushelCloud`:
-  /// `BushelCloud` exists to *write* the database from CI and carries MistKit,
+  /// Transport is native `CloudKit.framework` rather than `SwoopMistKit`:
+  /// `SwoopMistKit` exists to *write* the database from CI and carries MistKit,
   /// SwiftSoup, swift-configuration and the scrapers, plus a Server-to-Server
   /// PEM credential that cannot ship in a sandboxed app.
   ///
@@ -21,7 +21,7 @@
     /// The CloudKit container backing Bushel's published catalog.
     public static let defaultContainerIdentifier = "iCloud.com.brightdigit.Bushel"
 
-    /// The record type populated by BushelCloud's sync.
+    /// The record type populated by SwoopMistKit's sync.
     public static let recordType = "RestoreImage"
 
     private let containerIdentifier: String

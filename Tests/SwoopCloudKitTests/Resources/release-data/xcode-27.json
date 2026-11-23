@@ -1,0 +1,706 @@
+{
+  "fetchedAt": "2026-10-27T00:00:00Z",
+  "sdkVersions": [
+    {
+      "platform": "iOS",
+      "version": "27.0",
+      "buildNumber": "24A5355p",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 1",
+      "releaseDate": "2026-06-08T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5194q",
+      "supersededBy": "SDKVersion-iOS-24A430",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "iOS",
+      "version": "27.0",
+      "buildNumber": "24A5370g",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 2",
+      "releaseDate": "2026-06-22T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5209h",
+      "supersededBy": "SDKVersion-iOS-24A430",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "iOS",
+      "version": "27.0",
+      "buildNumber": "24A5380g",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 3",
+      "releaseDate": "2026-07-06T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5218g",
+      "supersededBy": "SDKVersion-iOS-24A430",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "iOS",
+      "version": "27.0",
+      "buildNumber": "24A5390e",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 4",
+      "releaseDate": "2026-07-20T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5228h",
+      "supersededBy": "SDKVersion-iOS-24A430",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "iOS",
+      "version": "27.0",
+      "buildNumber": "24A5408c",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 5",
+      "releaseDate": "2026-08-10T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5237l",
+      "supersededBy": "SDKVersion-iOS-24A430",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "iOS",
+      "version": "27.0",
+      "buildNumber": "24A5422a",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 6",
+      "releaseDate": "2026-08-24T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5252f",
+      "supersededBy": "SDKVersion-iOS-24A430",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "iOS",
+      "version": "27.0",
+      "buildNumber": "24A430",
+      "isPrerelease": false,
+      "releaseDate": "2026-09-09T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A266a"
+    },
+    {
+      "platform": "iOS",
+      "version": "27.2",
+      "buildNumber": "24B5084k",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 1",
+      "releaseDate": "2026-09-16T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27B5019j"
+    },
+    {
+      "platform": "iOS",
+      "version": "27.0",
+      "buildNumber": "24A94403",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 1",
+      "releaseDate": "2026-09-18T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A9269"
+    },
+    {
+      "platform": "iOS",
+      "version": "27.2",
+      "buildNumber": "24B5089g",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 2",
+      "releaseDate": "2026-09-28T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27B5028f"
+    },
+    {
+      "platform": "iOS",
+      "version": "27.1",
+      "buildNumber": "24A94232",
+      "isPrerelease": false,
+      "releaseDate": "2026-10-05T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A9275"
+    },
+    {
+      "platform": "iOS",
+      "version": "27.2",
+      "buildNumber": "24B5109a",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 3",
+      "releaseDate": "2026-10-14T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27B5038j"
+    },
+    {
+      "platform": "iOS",
+      "version": "27.2",
+      "buildNumber": "24B113",
+      "isPrerelease": true,
+      "prereleaseLabel": "RC 1",
+      "releaseDate": "2026-10-19T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27B48"
+    },
+    {
+      "platform": "macOS",
+      "version": "27.0",
+      "buildNumber": "26A5353p",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 1",
+      "releaseDate": "2026-06-08T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5194q",
+      "supersededBy": "SDKVersion-macOS-26A425",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "macOS",
+      "version": "27.0",
+      "buildNumber": "26A5368f",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 2",
+      "releaseDate": "2026-06-22T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5209h",
+      "supersededBy": "SDKVersion-macOS-26A425",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "macOS",
+      "version": "27.0",
+      "buildNumber": "26A5378i",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 3",
+      "releaseDate": "2026-07-06T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5218g",
+      "supersededBy": "SDKVersion-macOS-26A425",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "macOS",
+      "version": "27.0",
+      "buildNumber": "26A5388f",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 4",
+      "releaseDate": "2026-07-20T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5228h",
+      "supersededBy": "SDKVersion-macOS-26A425",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "macOS",
+      "version": "27.0",
+      "buildNumber": "26A5406c",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 5",
+      "releaseDate": "2026-08-10T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5237l",
+      "supersededBy": "SDKVersion-macOS-26A425",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "macOS",
+      "version": "27.0",
+      "buildNumber": "26A5419a",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 6",
+      "releaseDate": "2026-08-24T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5252f",
+      "supersededBy": "SDKVersion-macOS-26A425",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "macOS",
+      "version": "27.0",
+      "buildNumber": "26A425",
+      "isPrerelease": false,
+      "releaseDate": "2026-09-09T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A266a"
+    },
+    {
+      "platform": "macOS",
+      "version": "27.2",
+      "buildNumber": "26B5086k",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 1",
+      "releaseDate": "2026-09-16T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27B5019j"
+    },
+    {
+      "platform": "macOS",
+      "version": "27.2",
+      "buildNumber": "26B5091g",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 2",
+      "releaseDate": "2026-09-28T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27B5028f"
+    },
+    {
+      "platform": "macOS",
+      "version": "27.2",
+      "buildNumber": "26B5110a",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 3",
+      "releaseDate": "2026-10-14T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27B5038j"
+    },
+    {
+      "platform": "macOS",
+      "version": "27.2",
+      "buildNumber": "26B116",
+      "isPrerelease": true,
+      "prereleaseLabel": "RC 1",
+      "releaseDate": "2026-10-19T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27B48"
+    },
+    {
+      "platform": "tvOS",
+      "version": "27.0",
+      "buildNumber": "24J5289o",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 1",
+      "releaseDate": "2026-06-08T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5194q",
+      "supersededBy": "SDKVersion-tvOS-24J360",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "tvOS",
+      "version": "27.0",
+      "buildNumber": "24J5305f",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 2",
+      "releaseDate": "2026-06-22T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5209h",
+      "supersededBy": "SDKVersion-tvOS-24J360",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "tvOS",
+      "version": "27.0",
+      "buildNumber": "24J5315h",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 3",
+      "releaseDate": "2026-07-06T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5218g",
+      "supersededBy": "SDKVersion-tvOS-24J360",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "tvOS",
+      "version": "27.0",
+      "buildNumber": "24J5325d",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 4",
+      "releaseDate": "2026-07-20T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5228h",
+      "supersededBy": "SDKVersion-tvOS-24J360",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "tvOS",
+      "version": "27.0",
+      "buildNumber": "24J5346a",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 5",
+      "releaseDate": "2026-08-10T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5237l",
+      "supersededBy": "SDKVersion-tvOS-24J360",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "tvOS",
+      "version": "27.0",
+      "buildNumber": "24J5356a",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 6",
+      "releaseDate": "2026-08-24T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5252f",
+      "supersededBy": "SDKVersion-tvOS-24J360",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "tvOS",
+      "version": "27.0",
+      "buildNumber": "24J360",
+      "isPrerelease": false,
+      "releaseDate": "2026-09-09T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A266a"
+    },
+    {
+      "platform": "tvOS",
+      "version": "27.2",
+      "buildNumber": "24K5088l",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 1",
+      "releaseDate": "2026-09-16T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27B5019j"
+    },
+    {
+      "platform": "tvOS",
+      "version": "27.2",
+      "buildNumber": "24K5093g",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 2",
+      "releaseDate": "2026-09-28T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27B5028f"
+    },
+    {
+      "platform": "tvOS",
+      "version": "27.2",
+      "buildNumber": "24K117",
+      "isPrerelease": true,
+      "prereleaseLabel": "RC 1",
+      "releaseDate": "2026-10-19T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27B48"
+    },
+    {
+      "platform": "visionOS",
+      "version": "27.0",
+      "buildNumber": "24M5291p",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 1",
+      "releaseDate": "2026-06-08T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5194q",
+      "supersededBy": "SDKVersion-visionOS-24M361",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "visionOS",
+      "version": "27.0",
+      "buildNumber": "24M5306g",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 2",
+      "releaseDate": "2026-06-22T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5209h",
+      "supersededBy": "SDKVersion-visionOS-24M361",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "visionOS",
+      "version": "27.0",
+      "buildNumber": "24M5316i",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 3",
+      "releaseDate": "2026-07-06T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5218g",
+      "supersededBy": "SDKVersion-visionOS-24M361",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "visionOS",
+      "version": "27.0",
+      "buildNumber": "24M5326e",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 4",
+      "releaseDate": "2026-07-20T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5228h",
+      "supersededBy": "SDKVersion-visionOS-24M361",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "visionOS",
+      "version": "27.0",
+      "buildNumber": "24M5347a",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 5",
+      "releaseDate": "2026-08-10T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5237l",
+      "supersededBy": "SDKVersion-visionOS-24M361",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "visionOS",
+      "version": "27.0",
+      "buildNumber": "24M5357a",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 6",
+      "releaseDate": "2026-08-24T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5252f",
+      "supersededBy": "SDKVersion-visionOS-24M361",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "visionOS",
+      "version": "27.0",
+      "buildNumber": "24M361",
+      "isPrerelease": false,
+      "releaseDate": "2026-09-09T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A266a"
+    },
+    {
+      "platform": "visionOS",
+      "version": "27.2",
+      "buildNumber": "24N5088l",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 1",
+      "releaseDate": "2026-09-16T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27B5019j"
+    },
+    {
+      "platform": "visionOS",
+      "version": "27.2",
+      "buildNumber": "24N5093f",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 2",
+      "releaseDate": "2026-09-28T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27B5028f"
+    },
+    {
+      "platform": "visionOS",
+      "version": "27.2",
+      "buildNumber": "24N5112a",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 3",
+      "releaseDate": "2026-10-14T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27B5038j"
+    },
+    {
+      "platform": "visionOS",
+      "version": "27.2",
+      "buildNumber": "24N117",
+      "isPrerelease": true,
+      "prereleaseLabel": "RC 1",
+      "releaseDate": "2026-10-19T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27B48"
+    },
+    {
+      "platform": "watchOS",
+      "version": "27.0",
+      "buildNumber": "24R5289n",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 1",
+      "releaseDate": "2026-06-08T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5194q",
+      "supersededBy": "SDKVersion-watchOS-24R360",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "watchOS",
+      "version": "27.0",
+      "buildNumber": "24R5305f",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 2",
+      "releaseDate": "2026-06-22T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5209h",
+      "supersededBy": "SDKVersion-watchOS-24R360",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "watchOS",
+      "version": "27.0",
+      "buildNumber": "24R5315h",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 3",
+      "releaseDate": "2026-07-06T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5218g",
+      "supersededBy": "SDKVersion-watchOS-24R360",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "watchOS",
+      "version": "27.0",
+      "buildNumber": "24R5325e",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 4",
+      "releaseDate": "2026-07-20T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5228h",
+      "supersededBy": "SDKVersion-watchOS-24R360",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "watchOS",
+      "version": "27.0",
+      "buildNumber": "24R5346a",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 5",
+      "releaseDate": "2026-08-10T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5237l",
+      "supersededBy": "SDKVersion-watchOS-24R360",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "watchOS",
+      "version": "27.0",
+      "buildNumber": "24R5355a",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 6",
+      "releaseDate": "2026-08-24T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A5252f",
+      "supersededBy": "SDKVersion-watchOS-24R360",
+      "supersededAt": "2026-09-09T00:00:00Z"
+    },
+    {
+      "platform": "watchOS",
+      "version": "27.0",
+      "buildNumber": "24R360",
+      "isPrerelease": false,
+      "releaseDate": "2026-09-09T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27A266a"
+    },
+    {
+      "platform": "watchOS",
+      "version": "27.2",
+      "buildNumber": "24S5086l",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 1",
+      "releaseDate": "2026-09-16T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27B5019j"
+    },
+    {
+      "platform": "watchOS",
+      "version": "27.2",
+      "buildNumber": "24S5091f",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 2",
+      "releaseDate": "2026-09-28T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27B5028f"
+    },
+    {
+      "platform": "watchOS",
+      "version": "27.2",
+      "buildNumber": "24S5110a",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 3",
+      "releaseDate": "2026-10-14T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27B5038j"
+    },
+    {
+      "platform": "watchOS",
+      "version": "27.2",
+      "buildNumber": "24S115",
+      "isPrerelease": true,
+      "prereleaseLabel": "RC 1",
+      "releaseDate": "2026-10-19T00:00:00Z",
+      "xcodeVersion": "XcodeVersion-27B48"
+    }
+  ],
+  "xcodeVersions": [
+    {
+      "version": "27.0",
+      "buildNumber": "27A5194q",
+      "releaseDate": "2026-06-08T00:00:00Z",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 1",
+      "downloadURL": "https://download.developer.apple.com/Developer_Tools/Xcode_27_beta/Xcode_27_beta.xip",
+      "includedSwiftVersion": "SwiftVersion-6.4",
+      "sdkVersions": "{\"iOS\":\"27.0\",\"macOS\":\"27.0\",\"tvOS\":\"27.0\",\"visionOS\":\"27.0\",\"watchOS\":\"27.0\"}",
+      "notes": "REQUIRES:26.4|NOTES_URL:https://developer.apple.com/documentation/xcode-release-notes/xcode-27-release-notes"
+    },
+    {
+      "version": "27.0",
+      "buildNumber": "27A5209h",
+      "releaseDate": "2026-06-22T00:00:00Z",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 2",
+      "downloadURL": "https://download.developer.apple.com/Developer_Tools/Xcode_27_beta_2/Xcode_27_beta_2.xip",
+      "includedSwiftVersion": "SwiftVersion-6.4",
+      "sdkVersions": "{\"iOS\":\"27.0\",\"macOS\":\"27.0\",\"tvOS\":\"27.0\",\"visionOS\":\"27.0\",\"watchOS\":\"27.0\"}",
+      "notes": "REQUIRES:26.4|NOTES_URL:https://developer.apple.com/documentation/xcode-release-notes/xcode-27-release-notes"
+    },
+    {
+      "version": "27.0",
+      "buildNumber": "27A5218g",
+      "releaseDate": "2026-07-06T00:00:00Z",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 3",
+      "downloadURL": "https://download.developer.apple.com/Developer_Tools/Xcode_27_beta_3/Xcode_27_beta_3.xip",
+      "includedSwiftVersion": "SwiftVersion-6.4",
+      "sdkVersions": "{\"iOS\":\"27.0\",\"macOS\":\"27.0\",\"tvOS\":\"27.0\",\"visionOS\":\"27.0\",\"watchOS\":\"27.0\"}",
+      "notes": "REQUIRES:26.4|NOTES_URL:https://developer.apple.com/documentation/xcode-release-notes/xcode-27-release-notes"
+    },
+    {
+      "version": "27.0",
+      "buildNumber": "27A5228h",
+      "releaseDate": "2026-07-20T00:00:00Z",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 4",
+      "downloadURL": "https://download.developer.apple.com/Developer_Tools/Xcode_27_beta_4/Xcode_27_beta_4.xip",
+      "includedSwiftVersion": "SwiftVersion-6.4",
+      "sdkVersions": "{\"iOS\":\"27.0\",\"macOS\":\"27.0\",\"tvOS\":\"27.0\",\"visionOS\":\"27.0\",\"watchOS\":\"27.0\"}",
+      "notes": "REQUIRES:26.4|NOTES_URL:https://developer.apple.com/documentation/xcode-release-notes/xcode-27-release-notes"
+    },
+    {
+      "version": "27.0",
+      "buildNumber": "27A5237l",
+      "releaseDate": "2026-08-10T00:00:00Z",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 5",
+      "downloadURL": "https://download.developer.apple.com/Developer_Tools/Xcode_27_beta_5/Xcode_27_beta_5.xip",
+      "includedSwiftVersion": "SwiftVersion-6.4",
+      "sdkVersions": "{\"iOS\":\"27.0\",\"macOS\":\"27.0\",\"tvOS\":\"27.0\",\"visionOS\":\"27.0\",\"watchOS\":\"27.0\"}",
+      "notes": "REQUIRES:26.4|NOTES_URL:https://developer.apple.com/documentation/xcode-release-notes/xcode-27-release-notes"
+    },
+    {
+      "version": "27.0",
+      "buildNumber": "27A5252f",
+      "releaseDate": "2026-08-24T00:00:00Z",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 6",
+      "downloadURL": "https://download.developer.apple.com/Developer_Tools/Xcode_27_beta_6/Xcode_27_beta_6.xip",
+      "includedSwiftVersion": "SwiftVersion-6.4",
+      "sdkVersions": "{\"iOS\":\"27.0\",\"macOS\":\"27.0\",\"tvOS\":\"27.0\",\"visionOS\":\"27.0\",\"watchOS\":\"27.0\"}",
+      "notes": "REQUIRES:26.4|NOTES_URL:https://developer.apple.com/documentation/xcode-release-notes/xcode-27-release-notes"
+    },
+    {
+      "version": "27.0",
+      "buildNumber": "27A266a",
+      "releaseDate": "2026-09-14T00:00:00Z",
+      "isPrerelease": false,
+      "downloadURL": "https://download.developer.apple.com/Developer_Tools/Xcode_27/Xcode_27.xip",
+      "includedSwiftVersion": "SwiftVersion-6.4",
+      "sdkVersions": "{\"iOS\":\"27.0\",\"macOS\":\"27.0\",\"tvOS\":\"27.0\",\"visionOS\":\"27.0\",\"watchOS\":\"27.0\"}",
+      "notes": "REQUIRES:26.6|NOTES_URL:https://developer.apple.com/documentation/xcode-release-notes/xcode-27-release-notes"
+    },
+    {
+      "version": "27.2",
+      "buildNumber": "27B5019j",
+      "releaseDate": "2026-09-16T00:00:00Z",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 1",
+      "downloadURL": "https://download.developer.apple.com/Developer_Tools/Xcode_27.2_beta/Xcode_27.2_beta.xip",
+      "includedSwiftVersion": "SwiftVersion-6.4",
+      "sdkVersions": "{\"iOS\":\"27.2\",\"macOS\":\"27.2\",\"tvOS\":\"27.2\",\"visionOS\":\"27.2\",\"watchOS\":\"27.2\"}",
+      "notes": "REQUIRES:26.6|NOTES_URL:https://developer.apple.com/documentation/xcode-release-notes/xcode-27_2-release-notes"
+    },
+    {
+      "version": "27.1",
+      "buildNumber": "27A9269",
+      "releaseDate": "2026-09-18T00:00:00Z",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 1",
+      "downloadURL": "https://download.developer.apple.com/Developer_Tools/Xcode_27.1_beta/Xcode_27.1_beta.xip",
+      "includedSwiftVersion": "SwiftVersion-6.4",
+      "sdkVersions": "{\"iOS\":\"27.0\",\"macOS\":\"27.0\",\"tvOS\":\"27.0\",\"visionOS\":\"27.0\",\"watchOS\":\"27.0\"}",
+      "notes": "REQUIRES:26.6|NOTES_URL:https://developer.apple.com/documentation/xcode-release-notes/xcode-27_1-release-notes"
+    },
+    {
+      "version": "27.2",
+      "buildNumber": "27B5028f",
+      "releaseDate": "2026-09-28T00:00:00Z",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 2",
+      "downloadURL": "https://download.developer.apple.com/Developer_Tools/Xcode_27.2_beta_2/Xcode_27.2_beta_2.xip",
+      "includedSwiftVersion": "SwiftVersion-6.4",
+      "sdkVersions": "{\"iOS\":\"27.2\",\"macOS\":\"27.2\",\"tvOS\":\"27.2\",\"visionOS\":\"27.2\",\"watchOS\":\"27.2\"}",
+      "notes": "REQUIRES:26.6|NOTES_URL:https://developer.apple.com/documentation/xcode-release-notes/xcode-27_2-release-notes"
+    },
+    {
+      "version": "27.2",
+      "buildNumber": "27B5038j",
+      "releaseDate": "2026-10-14T00:00:00Z",
+      "isPrerelease": true,
+      "prereleaseLabel": "Beta 3",
+      "downloadURL": "https://download.developer.apple.com/Developer_Tools/Xcode_27.2_beta_3/Xcode_27.2_beta_3.xip",
+      "includedSwiftVersion": "SwiftVersion-6.4.2",
+      "sdkVersions": "{\"iOS\":\"27.2\",\"macOS\":\"27.2\",\"tvOS\":\"27.2\",\"visionOS\":\"27.2\",\"watchOS\":\"27.2\"}",
+      "notes": "REQUIRES:26.6|NOTES_URL:https://developer.apple.com/documentation/xcode-release-notes/xcode-27_2-release-notes"
+    },
+    {
+      "version": "27.1",
+      "buildNumber": "27A9275",
+      "releaseDate": "2026-10-15T00:00:00Z",
+      "isPrerelease": false,
+      "downloadURL": "https://download.developer.apple.com/Developer_Tools/Xcode_27.1/Xcode_27.1.xip",
+      "includedSwiftVersion": "SwiftVersion-6.4",
+      "sdkVersions": "{\"iOS\":\"27.1\",\"macOS\":\"27.0\",\"tvOS\":\"27.0\",\"visionOS\":\"27.0\",\"watchOS\":\"27.0\"}",
+      "notes": "REQUIRES:26.6|NOTES_URL:https://developer.apple.com/documentation/xcode-release-notes/xcode-27_1-release-notes"
+    },
+    {
+      "version": "27.2",
+      "buildNumber": "27B48",
+      "releaseDate": "2026-10-19T00:00:00Z",
+      "isPrerelease": true,
+      "prereleaseLabel": "RC 1",
+      "downloadURL": "https://download.developer.apple.com/Developer_Tools/Xcode_27.2_Release_Candidate/Xcode_27.2_Release_Candidate.xip",
+      "includedSwiftVersion": "SwiftVersion-6.4.2",
+      "sdkVersions": "{\"iOS\":\"27.2\",\"macOS\":\"27.2\",\"tvOS\":\"27.2\",\"visionOS\":\"27.2\",\"watchOS\":\"27.2\"}",
+      "notes": "REQUIRES:26.6|NOTES_URL:https://developer.apple.com/documentation/xcode-release-notes/xcode-27_2-release-notes"
+    }
+  ]
+}
