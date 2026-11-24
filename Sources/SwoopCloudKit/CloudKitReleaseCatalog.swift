@@ -38,7 +38,7 @@
 
   /// A read-only client for the `SDKVersion`, `XcodeVersion` and
   /// `SimulatorRuntime` record types in the **public** database of
-  /// `iCloud.com.brightdigit.Bushel`.
+  /// `iCloud.com.brightdigit.Swoop`.
   ///
   /// The types grant `READ` only to `_icloud`, so reads need the app's iCloud
   /// entitlement and a signed-in account (``accountStatus()``). Which
@@ -51,7 +51,7 @@
   /// ignores macOS SDKs).
   public struct CloudKitReleaseCatalog: Sendable {
     /// The CloudKit container SwoopMistKit's sync writes to.
-    public static let defaultContainerIdentifier = "iCloud.com.brightdigit.Bushel"
+    public static let defaultContainerIdentifier = "iCloud.com.brightdigit.Swoop"
 
     /// The `SDKVersion` record type.
     public static let sdkVersionRecordType = "SDKVersion"

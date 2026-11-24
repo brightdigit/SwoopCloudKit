@@ -4,7 +4,7 @@ Guidance for Claude Code when working in this repository.
 
 ## What this is
 
-SwoopCloudKit is the read side of the Swoop release-data packages. It queries the **public** CloudKit database of `iCloud.com.brightdigit.Bushel` with native `CloudKit.framework` and maps each `CKRecord` onto SwoopKit's models. It has one library product and one target, `SwoopCloudKit`, and depends only on SwoopKit.
+SwoopCloudKit is the read side of the Swoop release-data packages. It queries the **public** CloudKit database of `iCloud.com.brightdigit.Swoop` with native `CloudKit.framework` and maps each `CKRecord` onto SwoopKit's models. It has one library product and one target, `SwoopCloudKit`, and depends only on SwoopKit.
 
 - `CloudKitReleaseCatalog` reads `SDKVersion`, `XcodeVersion` and `SimulatorRuntime` (every page; unmappable records come back as `CloudKitRecordSkip`s, not failures), checks the iCloud account (`CloudKitAccountStatus`), and builds a `ReleaseDataSnapshot` (`fetchSnapshot(now:)`).
 - `CloudKitRestoreImageService` lists `RestoreImage` records for Bushel (one page).

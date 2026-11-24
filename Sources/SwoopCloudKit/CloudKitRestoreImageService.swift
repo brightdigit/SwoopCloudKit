@@ -33,7 +33,7 @@
   internal import SwoopKit
 
   /// A read-only client for the `RestoreImage` record type in the **public**
-  /// database of `iCloud.com.brightdigit.Bushel`.
+  /// database of `iCloud.com.brightdigit.Swoop`.
   ///
   /// Transport is native `CloudKit.framework` rather than `SwoopMistKit`:
   /// `SwoopMistKit` exists to *write* the database from CI and carries MistKit,
@@ -43,7 +43,7 @@
   /// - Important: This service only lists. It never downloads or imports.
   public struct CloudKitRestoreImageService: Sendable {
     /// The CloudKit container backing Bushel's published catalog.
-    public static let defaultContainerIdentifier = "iCloud.com.brightdigit.Bushel"
+    public static let defaultContainerIdentifier = "iCloud.com.brightdigit.Swoop"
 
     /// The record type populated by SwoopMistKit's sync.
     public static let recordType = "RestoreImage"

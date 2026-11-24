@@ -7,7 +7,7 @@
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/brightdigit/SwoopCloudKit/SwoopCloudKit.yml?label=actions&logo=github)](https://github.com/brightdigit/SwoopCloudKit/actions)
 [![Documentation](https://img.shields.io/badge/docc-read_documentation-blue)](https://swiftpackageindex.com/brightdigit/SwoopCloudKit/documentation)
 
-A read-only reader for the public CloudKit database of `iCloud.com.brightdigit.Bushel`, using native `CloudKit.framework`. It maps `CKRecord`s onto the record models from [SwoopKit](https://github.com/brightdigit/SwoopKit). Bushel and Stewed share it.
+A read-only reader for the public CloudKit database of `iCloud.com.brightdigit.Swoop`, using native `CloudKit.framework`. It maps `CKRecord`s onto the record models from [SwoopKit](https://github.com/brightdigit/SwoopKit). Bushel and Stewed share it.
 
 [SwoopMistKit](https://github.com/brightdigit/SwoopMistKit) writes the database. This package only queries it, and it needs no API token or server-to-server key: it uses the app's iCloud entitlement.
 
@@ -26,7 +26,7 @@ A read-only reader for the public CloudKit database of `iCloud.com.brightdigit.B
 ## Requirements
 
 - Swift 6.4 (Xcode 27) or later.
-- macOS 14 or later for the CloudKit readers, with the iCloud (CloudKit) capability and the `iCloud.com.brightdigit.Bushel` container in the app's entitlements, and a signed-in iCloud account at run time.
+- macOS 14 or later for the CloudKit readers, with the iCloud (CloudKit) capability and the `iCloud.com.brightdigit.Swoop` container in the app's entitlements, and a signed-in iCloud account at run time.
 - The snapshot, cache file and JSON helpers also build on Linux.
 
 ## Installation

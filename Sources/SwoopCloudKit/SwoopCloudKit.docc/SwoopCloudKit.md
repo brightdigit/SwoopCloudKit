@@ -6,7 +6,7 @@ keep it as a snapshot or cache file.
 ## Overview
 
 SwoopMistKit syncs Apple's SDK, Xcode, simulator runtime and macOS restore image
-releases into the public database of the `iCloud.com.brightdigit.Bushel` container.
+releases into the public database of the `iCloud.com.brightdigit.Swoop` container.
 SwoopCloudKit is the read side: it queries that database with `CloudKit.framework`
 and maps each `CKRecord` onto the shared record models from SwoopKit, such as
 `SDKVersionRecord`, `XcodeVersionRecord` and `SimulatorRuntimeRecord`.
