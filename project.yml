@@ -1,0 +1,13 @@
+name: SwoopCloudKit
+settings:
+  LINT_MODE: ${LINT_MODE}
+packages:
+  SwoopCloudKit:
+    path: .
+aggregateTargets:
+  Lint:
+    buildScripts:
+      - path: Scripts/lint.sh
+        name: Lint
+        basedOnDependencyAnalysis: false
+    schemes: {}

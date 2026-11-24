@@ -1,7 +1,13 @@
-// swift-tools-version: 6.0
+// swift-tools-version: 6.4
 
 import PackageDescription
 
+// A read-only reader for the public CloudKit database SwoopMistKit writes,
+// using native CloudKit. The CloudKit types build only where CloudKit exists;
+// the release-data snapshot and cache file build everywhere SwoopKit does.
+//
+// DocC: Scripts/docc.sh builds the catalog without swift-docc-plugin, so
+// packages that depend on SwoopCloudKit never resolve the plugin.
 let package = Package(
   name: "SwoopCloudKit",
   platforms: [
@@ -22,7 +28,8 @@ let package = Package(
         .product(name: "SwoopKit", package: "SwoopKit")
       ],
       swiftSettings: [
-        .enableUpcomingFeature("InternalImportsByDefault")
+        .enableUpcomingFeature("ExistentialAny"),
+        .enableUpcomingFeature("InternalImportsByDefault"),
       ]
     ),
     .testTarget(
@@ -37,8 +44,10 @@ let package = Package(
         .copy("Resources")
       ],
       swiftSettings: [
-        .enableUpcomingFeature("InternalImportsByDefault")
+        .enableUpcomingFeature("ExistentialAny"),
+        .enableUpcomingFeature("InternalImportsByDefault"),
       ]
     ),
-  ]
+  ],
+  swiftLanguageModes: [.v6]
 )

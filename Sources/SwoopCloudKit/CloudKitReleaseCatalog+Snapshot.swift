@@ -1,13 +1,37 @@
 //
-// CloudKitReleaseCatalog+Snapshot.swift
-// Copyright (c) 2026 BrightDigit.
+//  CloudKitReleaseCatalog+Snapshot.swift
+//  SwoopCloudKit
+//
+//  Created by Leo Dion.
+//  Copyright © 2026 BrightDigit.
+//
+//  Permission is hereby granted, free of charge, to any person
+//  obtaining a copy of this software and associated documentation
+//  files (the “Software”), to deal in the Software without
+//  restriction, including without limitation the rights to use,
+//  copy, modify, merge, publish, distribute, sublicense, and/or
+//  sell copies of the Software, and to permit persons to whom the
+//  Software is furnished to do so, subject to the following
+//  conditions:
+//
+//  The above copyright notice and this permission notice shall be
+//  included in all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,
+//  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+//  OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+//  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+//  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+//  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+//  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+//  OTHER DEALINGS IN THE SOFTWARE.
 //
 
 #if canImport(CloudKit)
-  internal import SwoopKit
   internal import CloudKit
   public import Foundation
   internal import os
+  internal import SwoopKit
 
   /// Fetches every record of one type, for the snapshot.
   internal typealias CloudKitRecordsFetch<Record: Sendable> =
@@ -18,6 +42,39 @@
       subsystem: "com.brightdigit.SwoopCloudKit",
       category: "CloudKitReleaseCatalog"
     )
+
+    /// Runs the three fetches in order and builds the snapshot.
+    ///
+    /// Only a `SimulatorRuntime` failure for an unknown record type is
+    /// tolerated; every other failure, of any query, is thrown.
+    internal static func snapshot(
+      now: Date,
+      sdkVersions: CloudKitRecordsFetch<SDKVersionRecord>,
+      xcodeVersions: CloudKitRecordsFetch<XcodeVersionRecord>,
+      simulatorRuntimes: CloudKitRecordsFetch<SimulatorRuntimeRecord>
+    ) async throws(CloudKitCatalogError) -> ReleaseDataSnapshot {
+      let sdk = try await sdkVersions()
+      let xcode = try await xcodeVersions()
+      let runtimes: [SimulatorRuntimeRecord]
+      do {
+        runtimes = try await simulatorRuntimes().records
+      } catch
+        where error.isUnknownRecordType
+        && error.operation == simulatorRuntimeRecordType
+      {
+        let message = error.message
+        logger.notice(
+          "No SimulatorRuntime type; no runtime records: \(message, privacy: .public)"
+        )
+        runtimes = []
+      }
+      return ReleaseDataSnapshot(
+        fetchedAt: now,
+        sdkVersions: sdk.records,
+        xcodeVersions: xcode.records,
+        simulatorRuntimes: runtimes
+      )
+    }
 
     /// Fetches `SDKVersion`, then `XcodeVersion`, then `SimulatorRuntime`,
     /// following every page, as a snapshot fetched at `now`.
@@ -58,38 +115,6 @@
         simulatorRuntimes: simulatorRuntimes
       )
     }
-
-    /// Runs the three fetches in order and builds the snapshot.
-    ///
-    /// Only a `SimulatorRuntime` failure for an unknown record type is
-    /// tolerated; every other failure, of any query, is thrown.
-    internal static func snapshot(
-      now: Date,
-      sdkVersions: CloudKitRecordsFetch<SDKVersionRecord>,
-      xcodeVersions: CloudKitRecordsFetch<XcodeVersionRecord>,
-      simulatorRuntimes: CloudKitRecordsFetch<SimulatorRuntimeRecord>
-    ) async throws(CloudKitCatalogError) -> ReleaseDataSnapshot {
-      let sdk = try await sdkVersions()
-      let xcode = try await xcodeVersions()
-      let runtimes: [SimulatorRuntimeRecord]
-      do {
-        runtimes = try await simulatorRuntimes().records
-      } catch where error.isUnknownRecordType
-        && error.operation == simulatorRuntimeRecordType
-      {
-        let message = error.message
-        logger.notice(
-          "No SimulatorRuntime type; no runtime records: \(message, privacy: .public)"
-        )
-        runtimes = []
-      }
-      return ReleaseDataSnapshot(
-        fetchedAt: now,
-        sdkVersions: sdk.records,
-        xcodeVersions: xcode.records,
-        simulatorRuntimes: runtimes
-      )
-    }
   }
 
   extension CloudKitCatalogError {
@@ -99,7 +124,8 @@
     /// A query for a record type the schema doesn't have fails with
     /// `CKError.unknownItem` (server message "Did not find record type:
     /// …"). A query names no record, so for a query that code means only
-    /// the type is missing. ``accountStatus()`` errors never count.
+    /// the type is missing. ``CloudKitReleaseCatalog/accountStatus()`` errors
+    /// never count.
     public var isUnknownRecordType: Bool {
       ckErrorCode == CKError.Code.unknownItem.rawValue
         && operation != "accountStatus"

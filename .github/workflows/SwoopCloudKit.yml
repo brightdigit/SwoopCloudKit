@@ -1,0 +1,160 @@
+name: SwoopCloudKit
+# Pull requests only: a push to a PR branch already triggers `pull_request`,
+# so a `push` trigger would run every commit twice. Use "Run workflow" for a
+# branch without a PR (it gets the full matrix on main and v* branches).
+on:
+  pull_request:
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - 'LICENSE'
+      - '.github/ISSUE_TEMPLATE/**'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+env:
+  PACKAGE_NAME: SwoopCloudKit
+  # The `simulator` branch depends on SwoopKit by sibling path (../SwoopKit),
+  # as it sits next to it in Stewed. CI swaps that for this SwoopKit branch;
+  # a manifest that already uses the SwoopKit URL is left alone.
+  SWOOPKIT_BRANCH: simulator
+
+jobs:
+  configure:
+    name: Configure Matrix
+    runs-on: ubuntu-latest
+    outputs:
+      full-matrix: ${{ steps.check.outputs.full }}
+      ubuntu-os: ${{ steps.matrix.outputs.ubuntu-os }}
+      ubuntu-swift: ${{ steps.matrix.outputs.ubuntu-swift }}
+    steps:
+      - id: check
+        name: Determine matrix scope
+        run: |
+          FULL=false
+          REF="${{ github.ref }}"
+          EVENT="${{ github.event_name }}"
+          BASE_REF="${{ github.base_ref }}"
+
+          # Full matrix for PRs into main or a semver branch (v1.0.0, 1.2.3-alpha.1, …)
+          if [[ "$EVENT" == "pull_request" ]]; then
+            if [[ "$BASE_REF" == "main" || "$BASE_REF" =~ ^v?[0-9]+\.[0-9]+\.[0-9]+ ]]; then
+              FULL=true
+            fi
+          # Full matrix for a manual run on main or a semver branch
+          elif [[ "$REF" == "refs/heads/main" || "$REF" =~ ^refs/heads/v?[0-9]+\.[0-9]+\.[0-9]+ ]]; then
+            FULL=true
+          fi
+
+          echo "full=$FULL" >> "$GITHUB_OUTPUT"
+          echo "Full matrix: $FULL (ref=$REF, event=$EVENT, base_ref=$BASE_REF)"
+
+      - id: matrix
+        name: Build matrix values
+        run: |
+          # Package.swift declares swift-tools-version: 6.4. Until Swift 6.4 has a
+          # release toolchain, the nightly image is the only Linux toolchain that
+          # can parse the manifest, so there are no older-Swift lanes.
+          SWIFT='[{"version":"6.4","image":"swiftlang/swift:nightly-6.4.x"}]'
+          if [[ "${{ steps.check.outputs.full }}" == "true" ]]; then
+            echo 'ubuntu-os=["noble","jammy"]' >> "$GITHUB_OUTPUT"
+          else
+            echo 'ubuntu-os=["noble"]' >> "$GITHUB_OUTPUT"
+          fi
+          echo "ubuntu-swift=$SWIFT" >> "$GITHUB_OUTPUT"
+
+  # Linux has no CloudKit: this builds and tests the release-data snapshot,
+  # the cache file and the JSON helpers, which must build everywhere SwoopKit
+  # does. The CloudKit readers and their tests are compiled out.
+  build-ubuntu:
+    name: Build on Ubuntu
+    needs: configure
+    runs-on: ubuntu-latest
+    # The `||` branch (a plain swift:<version>-<os> image) is for a release
+    # toolchain lane once Swift 6.4 ships; today every entry sets `image`.
+    container: ${{ matrix.swift.image && format('{0}-{1}', matrix.swift.image, matrix.os) || format('swift:{0}-{1}', matrix.swift.version, matrix.os) }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ${{ fromJSON(needs.configure.outputs.ubuntu-os) }}
+        swift: ${{ fromJSON(needs.configure.outputs.ubuntu-swift) }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup-swoopkit
+        with:
+          branch: ${{ env.SWOOPKIT_BRANCH }}
+      - uses: brightdigit/swift-build@v1
+        id: build
+        with:
+          skip-package-resolved: true
+
+  # macOS is the only Apple platform Package.swift declares, so there are no
+  # iOS, watchOS, tvOS or visionOS lanes. The tests never open a CKContainer
+  # (that traps without the iCloud entitlement), so they need no iCloud account.
+  build-macos:
+    name: Build on macOS
+    runs-on: ${{ matrix.runs-on }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # A swift-tools-version: 6.4 manifest needs Swift 6.4, so the Apple
+          # lanes run on the xcode-27 image; macos-26 / Xcode 26.x can't parse it.
+          # `runs-on: xcode-27` is its own (preview) image label with exactly one
+          # Xcode, 27.0 beta. Pin the /Applications/Xcode_27.0.app symlink, not
+          # the Xcode_27_beta_N.app path, which changes on every image refresh.
+          # SPM build
+          - runs-on: xcode-27
+            xcode: "/Applications/Xcode_27.0.app"
+
+          # xcodebuild against the macOS destination
+          - type: macos
+            runs-on: xcode-27
+            xcode: "/Applications/Xcode_27.0.app"
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup-swoopkit
+        with:
+          branch: ${{ env.SWOOPKIT_BRANCH }}
+      - name: Build and Test
+        id: build
+        uses: brightdigit/swift-build@v1
+        with:
+          type: ${{ matrix.type }}
+          xcode: ${{ matrix.xcode }}
+          skip-package-resolved: true
+
+  # Builds the DocC catalog with --warnings-as-errors, so an unresolved symbol
+  # link fails the PR. It runs on macOS because the CloudKit readers, most of
+  # the documented API, only exist there. Swift Package Index hosts the
+  # published docs (.spi.yml).
+  docs:
+    name: Documentation
+    runs-on: xcode-27
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup-swoopkit
+        with:
+          branch: ${{ env.SWOOPKIT_BRANCH }}
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_27.0.app/Contents/Developer
+      - name: Build DocC
+        run: ./Scripts/docc.sh
+
+  lint:
+    name: Linting
+    runs-on: ubuntu-latest
+    if: ${{ !cancelled() && !failure() }}
+    needs: [build-ubuntu, build-macos]
+    steps:
+      - uses: actions/checkout@v6
+      - uses: jdx/mise-action@v4
+        with:
+          cache: true
+      - name: Lint
+        run: |
+          set -e
+          ./Scripts/lint.sh

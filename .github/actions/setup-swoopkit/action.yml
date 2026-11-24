@@ -1,0 +1,46 @@
+name: Setup SwoopKit
+description: >-
+  Replaces the sibling SwoopKit path dependency (`../SwoopKit`, used on the
+  `simulator` branch inside Stewed) with a remote reference, pinned to the
+  branch's current commit. Does nothing when Package.swift already uses a URL.
+
+inputs:
+  branch:
+    description: SwoopKit branch to use (leave empty to keep the manifest as it is)
+  repository:
+    description: SwoopKit's Git URL
+    default: https://github.com/brightdigit/SwoopKit.git
+
+runs:
+  using: composite
+  steps:
+    # Pin by `revision:` rather than `branch:` so the dependency is
+    # content-addressed: `swift package dump-package` (which swift-build@v1
+    # hashes for its cache key) changes whenever the SwoopKit branch advances.
+    # Falls back to a `branch:` pin if the ref can't be resolved.
+    - name: Update Package.swift
+      if: inputs.branch != ''
+      shell: bash
+      run: |
+        if ! grep -q 'path: "\.\./SwoopKit"' Package.swift; then
+          echo "Package.swift doesn't use the sibling SwoopKit path; leaving it alone."
+          exit 0
+        fi
+        REPO='${{ inputs.repository }}'
+        BRANCH='${{ inputs.branch }}'
+        REF=$(git ls-remote "$REPO" "$BRANCH" | head -n1 | cut -f1)
+        if [ -n "$REF" ]; then
+          REQ='revision: "'"$REF"'"'
+          echo "Pinning SwoopKit to $BRANCH @ $REF"
+        else
+          REQ='branch: "'"$BRANCH"'"'
+          echo "Could not resolve $BRANCH to a commit; pinning by branch"
+        fi
+        EXPR='s|\.package(name: "SwoopKit", path: "\.\./SwoopKit")|.package(url: "'"$REPO"'", '"$REQ"')|g'
+        if [ "$RUNNER_OS" = "macOS" ]; then
+          sed -i '' "$EXPR" Package.swift
+        else
+          sed -i "$EXPR" Package.swift
+        fi
+        rm -f Package.resolved
+        grep -n 'SwoopKit' Package.swift
