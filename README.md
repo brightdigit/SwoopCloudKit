@@ -9,7 +9,7 @@
 
 A read-only reader for the public CloudKit database of `iCloud.com.brightdigit.Bushel`, using native `CloudKit.framework`. It maps `CKRecord`s onto the record models from [SwoopKit](https://github.com/brightdigit/SwoopKit). Bushel and Stewed share it.
 
-[SwoopMistKit](https://github.com/brightdigit/BushelCloud) writes the database. This package only queries it, and it needs no API token or server-to-server key: it uses the app's iCloud entitlement.
+[SwoopMistKit](https://github.com/brightdigit/SwoopMistKit) writes the database. This package only queries it, and it needs no API token or server-to-server key: it uses the app's iCloud entitlement.
 
 ## Table of Contents
 
