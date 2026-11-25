@@ -35,7 +35,7 @@
 
   @testable internal import SwoopCloudKit
 
-  @Suite("SimulatorRuntime CKRecord mapping")
+  @Suite("SimulatorRuntime CKRecord mapping", .enabled(if: Platform.isCloudKitAvailable))
   internal struct SimulatorRuntimeRecordCloudKitTests {
     /// A record shaped like SwoopMistKit's `toCloudKitFields()` output.
     private static func record(

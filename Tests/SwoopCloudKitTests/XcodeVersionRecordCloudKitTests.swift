@@ -35,7 +35,7 @@
 
   @testable internal import SwoopCloudKit
 
-  @Suite("XcodeVersion CKRecord mapping")
+  @Suite("XcodeVersion CKRecord mapping", .enabled(if: Platform.isCloudKitAvailable))
   internal struct XcodeVersionRecordCloudKitTests {
     private static let releaseDate = Date(timeIntervalSince1970: 1_780_000_000)
     private static let downloadURL = "https://developer.apple.com/download/Xcode_27.2.xip"

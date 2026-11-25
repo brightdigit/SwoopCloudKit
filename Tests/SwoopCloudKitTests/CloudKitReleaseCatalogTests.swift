@@ -37,7 +37,7 @@
 
   /// Covers what can be tested without a container: never open a `CKContainer`
   /// here, because without the iCloud entitlement it traps.
-  @Suite("CloudKitReleaseCatalog without a container")
+  @Suite("CloudKitReleaseCatalog without a container", .enabled(if: Platform.isCloudKitAvailable))
   internal struct CloudKitReleaseCatalogTests {
     private struct PageFailure: LocalizedError {
       var errorDescription: String? { "zone busy" }

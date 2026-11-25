@@ -35,7 +35,7 @@
 
   @testable internal import SwoopCloudKit
 
-  @Suite("SDKVersion CKRecord mapping")
+  @Suite("SDKVersion CKRecord mapping", .enabled(if: Platform.isCloudKitAvailable))
   internal struct SDKVersionRecordCloudKitTests {
     private static let releaseDate = Date(timeIntervalSince1970: 1_780_000_000)
     private static let supersededAt = Date(timeIntervalSince1970: 1_790_000_000)

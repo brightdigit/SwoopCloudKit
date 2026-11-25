@@ -37,7 +37,7 @@
 
   /// `fetchSnapshot(now:)`'s failure rules, with fake fetches: a missing
   /// `SimulatorRuntime` record type is tolerated, nothing else is.
-  @Suite("CloudKitReleaseCatalog snapshot fetch")
+  @Suite("CloudKitReleaseCatalog snapshot fetch", .enabled(if: Platform.isCloudKitAvailable))
   internal struct CloudKitReleaseCatalogSnapshotTests {
     private typealias Catalog = CloudKitReleaseCatalog
 

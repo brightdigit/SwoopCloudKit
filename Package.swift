@@ -10,8 +10,15 @@ import PackageDescription
 // packages that depend on SwoopCloudKit never resolve the plugin.
 let package = Package(
   name: "SwoopCloudKit",
+  // The Apple minimums match SwoopKit's, except macOS 14, which this
+  // package's consumers need.
   platforms: [
-    .macOS(.v14)
+    .macOS(.v14),
+    .iOS(.v18),
+    .watchOS(.v11),
+    .tvOS(.v18),
+    .visionOS(.v2),
+    .macCatalyst(.v18),
   ],
   products: [
     .library(name: "SwoopCloudKit", targets: ["SwoopCloudKit"])

@@ -83,9 +83,8 @@ jobs:
       - uses: brightdigit/swift-build@v1
         id: build
 
-  # macOS is the only Apple platform Package.swift declares, so there are no
-  # iOS, watchOS, tvOS or visionOS lanes. The tests never open a CKContainer
-  # (that traps without the iCloud entitlement), so they need no iCloud account.
+  # The tests never open a CKContainer (that traps without the iCloud
+  # entitlement), so no lane needs an iCloud account.
   build-macos:
     name: Build on macOS
     runs-on: ${{ matrix.runs-on }}
@@ -95,17 +94,18 @@ jobs:
         include:
           # A swift-tools-version: 6.4 manifest needs Swift 6.4, so the Apple
           # lanes run on the xcode-27 image; macos-26 / Xcode 26.x can't parse it.
-          # `runs-on: xcode-27` is its own (preview) image label, not a macos-NN
-          # one. As of the 2026-11-04 image it ships Xcode 27.0, 27.1 (default)
-          # and 27.2; these lanes pin /Applications/Xcode_27.2.app.
+          # See build-macos-platforms for why Xcode 27.2 and its device names.
           # SPM build
           - runs-on: xcode-27
             xcode: "/Applications/Xcode_27.2.app"
 
-          # xcodebuild against the macOS destination
-          - type: macos
+          # iOS build
+          - type: ios
             runs-on: xcode-27
             xcode: "/Applications/Xcode_27.2.app"
+            deviceName: "iPhone 18 Pro"
+            osVersion: "27.2"
+            download-platform: true
     steps:
       - uses: actions/checkout@v6
       - name: Build and Test
@@ -114,6 +114,62 @@ jobs:
         with:
           type: ${{ matrix.type }}
           xcode: ${{ matrix.xcode }}
+          deviceName: ${{ matrix.deviceName }}
+          osVersion: ${{ matrix.osVersion }}
+          download-platform: ${{ matrix.download-platform }}
+
+  # Full macOS platform builds — only for PRs into main or semver branches
+  build-macos-platforms:
+    name: Build on macOS (Platforms)
+    needs: configure
+    runs-on: ${{ matrix.runs-on }}
+    if: ${{ needs.configure.outputs.full-matrix == 'true' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # `runs-on: xcode-27` is its own (preview) image label, not a macos-NN
+          # one. As of the 2026-11-04 image it ships Xcode 27.0, 27.1 (default)
+          # and 27.2; these lanes pin /Applications/Xcode_27.2.app, whose
+          # simulator runtimes are 27.2 for every platform. 27.2 renamed the
+          # devices: iPhone 18 Pro, Apple Watch Ultra 4 (49mm), Apple TV 4K
+          # (4th generation). There is no plain "Apple TV" device, and a wrong
+          # name fails the simulator boot.
+          - type: macos
+            runs-on: xcode-27
+            xcode: "/Applications/Xcode_27.2.app"
+
+          - type: watchos
+            runs-on: xcode-27
+            xcode: "/Applications/Xcode_27.2.app"
+            deviceName: "Apple Watch Ultra 4 (49mm)"
+            osVersion: "27.2"
+            download-platform: true
+
+          - type: tvos
+            runs-on: xcode-27
+            xcode: "/Applications/Xcode_27.2.app"
+            deviceName: "Apple TV 4K (4th generation)"
+            osVersion: "27.2"
+            download-platform: true
+
+          - type: visionos
+            runs-on: xcode-27
+            xcode: "/Applications/Xcode_27.2.app"
+            deviceName: "Apple Vision Pro"
+            osVersion: "27.2"
+            download-platform: true
+    steps:
+      - uses: actions/checkout@v6
+      - name: Build and Test
+        id: build
+        uses: brightdigit/swift-build@v1
+        with:
+          type: ${{ matrix.type }}
+          xcode: ${{ matrix.xcode }}
+          deviceName: ${{ matrix.deviceName }}
+          osVersion: ${{ matrix.osVersion }}
+          download-platform: ${{ matrix.download-platform }}
 
   # Builds the DocC catalog with --warnings-as-errors, so an unresolved symbol
   # link fails the PR. It runs on macOS because the CloudKit readers, most of
