@@ -1,6 +1,6 @@
 # SwoopCloudKit
 
-[![SwiftPM](https://img.shields.io/badge/SPM-macOS%20%7C%20Linux%20(snapshots)-success?logo=swift)](https://swift.org)
+[![SwiftPM](https://img.shields.io/badge/SPM-macOS%20%7C%20Linux-success?logo=swift)](https://swift.org)
 [![Swift Versions](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fbrightdigit%2FSwoopCloudKit%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/brightdigit/SwoopCloudKit)
 [![Platforms](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fbrightdigit%2FSwoopCloudKit%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/brightdigit/SwoopCloudKit)
 [![License](https://img.shields.io/github/license/brightdigit/SwoopCloudKit)](LICENSE)
@@ -92,11 +92,11 @@ make lint      # swift-format, SwiftLint, build, headers, periphery (run `mise i
 make docs
 ```
 
-Lint tools are pinned in `mise.toml`. See `CLAUDE.md` for the package's rules.
+Lint tools are pinned in `mise.toml`. See `AGENTS.md` for the package's rules.
 
 ## Branches
 
-- `simulator`: Stewed's working branch. It depends on SwoopKit's `simulator` branch by URL. (`.github/actions/setup-swoopkit` swapped a sibling path for that URL in CI; it does nothing now.)
+- `simulator`: Stewed's working branch. It depends on SwoopKit's `simulator` branch by URL.
 - `main`: depends on SwoopKit by URL.
 
 ## License
