@@ -1,6 +1,6 @@
 # SwoopCloudKit
 
-[![SwiftPM](https://img.shields.io/badge/SPM-macOS%20%7C%20Linux-success?logo=swift)](https://swift.org)
+[![SwiftPM](https://img.shields.io/badge/SPM-Apple%20platforms%20%7C%20Linux-success?logo=swift)](https://swift.org)
 [![Swift Versions](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fbrightdigit%2FSwoopCloudKit%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/brightdigit/SwoopCloudKit)
 [![Platforms](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fbrightdigit%2FSwoopCloudKit%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/brightdigit/SwoopCloudKit)
 [![License](https://img.shields.io/github/license/brightdigit/SwoopCloudKit)](LICENSE)
@@ -25,15 +25,15 @@ A read-only reader for the public CloudKit database of `iCloud.com.brightdigit.S
 
 ## Requirements
 
-- Swift 6.4 (Xcode 27) or later.
-- macOS 14 or later for the CloudKit readers, with the iCloud (CloudKit) capability and the `iCloud.com.brightdigit.Swoop` container in the app's entitlements, and a signed-in iCloud account at run time.
+- Swift 6.4 (Xcode 27.2) or later.
+- macOS 14, iOS 18, watchOS 11, tvOS 18, visionOS 2 or Mac Catalyst 18 or later for the CloudKit readers, with the iCloud (CloudKit) capability and the `iCloud.com.brightdigit.Swoop` container in the app's entitlements, and a signed-in iCloud account at run time.
 - The snapshot, cache file and JSON helpers also build on Linux.
 
 ## Installation
 
 ```swift
 dependencies: [
-  .package(url: "https://github.com/brightdigit/SwoopCloudKit.git", branch: "main")
+  .package(url: "https://github.com/brightdigit/SwoopCloudKit.git", from: "1.0.0-alpha.1")
 ],
 targets: [
   .target(
@@ -96,8 +96,8 @@ Lint tools are pinned in `mise.toml`. See `AGENTS.md` for the package's rules.
 
 ## Branches
 
-- `simulator`: Stewed's working branch. It depends on SwoopKit's `simulator` branch by URL.
-- `main`: depends on SwoopKit by URL.
+- `main`: releases. It depends on SwoopKit `from: "1.0.0-alpha.1"`.
+- `simulator`: Stewed's working branch. Between releases it can depend on SwoopKit's `simulator` branch instead.
 
 ## License
 

@@ -21,7 +21,7 @@ SwoopMistKit writes the database; Stewed and Bushel read it through this package
 - **Mappings mirror SwoopMistKit's writer** (`from(recordInfo:)`) and its `schema.ckdb`: booleans are `INT64`, references become record-name strings, `sdkBuildNumbersText` is comma-separated text (MistKit#509).
 - **No swift-docc-plugin in `Package.swift`.** It would be resolved by every package that depends on SwoopCloudKit. Build docs with `Scripts/docc.sh`.
 - Swift 6.4 (swift-tools-version 6.4), Swift 6 language mode, complete strict concurrency, `ExistentialAny` and `InternalImportsByDefault`. Every public type is `Sendable`. Use typed throws for new throwing APIs.
-- Keep the platform minimum (macOS 14) unless a consumer needs it raised.
+- Keep the platform minimums (macOS 14; iOS 18, watchOS 11, tvOS 18, visionOS 2 and Mac Catalyst 18, matching SwoopKit) unless a consumer needs them raised.
 - Every public symbol has a doc comment. Add new public types to a topic group in `Sources/SwoopCloudKit/SwoopCloudKit.docc/SwoopCloudKit.md`. Link SwoopKit types in code voice (`SDKVersionRecord`), not as ``symbol links``: DocC can't resolve another module's symbols.
 - One type per file; extensions go in `Type+Feature.swift`. Each source file carries the MIT header (`make headers`).
 
@@ -47,7 +47,7 @@ There is no Xcode project or XcodeGen target; open `Package.swift` directly.
 
 GitHub Actions workflows trigger on `pull_request` (plus `workflow_dispatch`, branch deletion for cache cleanup, and issue/review-comment events for `claude.yml`), never on `push`. PRs into `main` or a semver branch (`v1.2.3`, `1.2.3-beta.1`) add a jammy Linux lane. There is no CodeQL workflow: CodeQL can't analyze Swift 6.4 yet.
 
-- The manifest needs Swift 6.4, so the Linux lanes use the release `swift:6.4-<os>` images (they build and test only the non-CloudKit code) and the macOS lanes use the `xcode-27` runner image with `/Applications/Xcode_27.2.app`. macOS is the only Apple platform declared, so there are no iOS, watchOS, tvOS or visionOS lanes.
+- The manifest needs Swift 6.4, so the Linux lanes use the release `swift:6.4-<os>` images (they build and test only the non-CloudKit code) and the macOS lanes use the `xcode-27` runner image with `/Applications/Xcode_27.2.app`. Every PR builds SPM on macOS and iOS; PRs into `main` or a semver branch also build macOS, watchOS, tvOS and visionOS with xcodebuild.
 - The lint job is pinned to `ubuntu-24.04`: `ubuntu-latest` is Ubuntu 26.04, which lacks the `libxml2.so.2` the SwiftLint binary needs.
 - The docs job builds DocC on macOS with warnings as errors.
 - Swift Package Index builds the published docs on macOS (`.spi.yml`).
