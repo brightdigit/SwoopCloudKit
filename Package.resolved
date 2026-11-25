@@ -1,0 +1,15 @@
+{
+  "originHash" : "4c560cd664ef6309809e62e43b7170eae4d1f05237dae8d3ef6bb2be26999d6b",
+  "pins" : [
+    {
+      "identity" : "swoopkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/brightdigit/SwoopKit.git",
+      "state" : {
+        "branch" : "simulator",
+        "revision" : "b18a1427013985155a08b4a5aa70d0ab043f27ed"
+      }
+    }
+  ],
+  "version" : 3
+}

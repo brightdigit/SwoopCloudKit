@@ -27,7 +27,7 @@ SwoopMistKit writes the database; Stewed and Bushel read it through this package
 
 ## Branches and the SwoopKit dependency
 
-This package is a git subrepo inside Stewed (`Packages/SwoopCloudKit`, branch `simulator`). There it depends on SwoopKit by sibling path (`../SwoopKit`); `main` uses SwoopKit's URL. CI swaps the path for the SwoopKit repo with `.github/actions/setup-swoopkit`.
+This package is a git subrepo inside Stewed (`Packages/SwoopCloudKit`, branch `simulator`). There it depends on SwoopKit's `simulator` branch by URL; `main` uses a SwoopKit version. `.github/actions/setup-swoopkit` used to swap a sibling path for that URL in CI and now does nothing.
 
 ## Commands
 

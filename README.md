@@ -96,7 +96,7 @@ Lint tools are pinned in `mise.toml`. See `CLAUDE.md` for the package's rules.
 
 ## Branches
 
-- `simulator`: Stewed's working branch. It depends on SwoopKit by path (`../SwoopKit`), as a sibling subrepo. CI swaps that path for the SwoopKit repo (`.github/actions/setup-swoopkit`).
+- `simulator`: Stewed's working branch. It depends on SwoopKit's `simulator` branch by URL. (`.github/actions/setup-swoopkit` swapped a sibling path for that URL in CI; it does nothing now.)
 - `main`: depends on SwoopKit by URL.
 
 ## License
