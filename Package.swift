@@ -48,7 +48,7 @@ let package = Package(
       resources: [
         // Release-data fixtures: snapshots and a cache file written before
         // the snapshot moved here from Stewed.
-        .copy("Resources")
+        .copy("Resources/release-data")
       ],
       swiftSettings: [
         .enableUpcomingFeature("ExistentialAny"),

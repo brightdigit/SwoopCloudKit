@@ -61,7 +61,7 @@ internal struct ReleaseDataFixture: Decodable {
       Bundle.module.url(
         forResource: name,
         withExtension: "json",
-        subdirectory: "Resources/release-data"
+        subdirectory: "release-data"
       )
     )
     return try Data(contentsOf: url)
