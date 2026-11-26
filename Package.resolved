@@ -1,5 +1,5 @@
 {
-  "originHash" : "4c560cd664ef6309809e62e43b7170eae4d1f05237dae8d3ef6bb2be26999d6b",
+  "originHash" : "b2070f0442dc9b6cfeecc655177aa372fb2b31d24bf47559de541d2294a3afb9",
   "pins" : [
     {
       "identity" : "swoopkit",
@@ -7,7 +7,7 @@
       "location" : "https://github.com/brightdigit/SwoopKit.git",
       "state" : {
         "branch" : "simulator",
-        "revision" : "3269bbe26b96e18a446bb619f460d37163f204f3"
+        "revision" : "0d261e7ad3d81e141ebfad0fb5d30a577089136c"
       }
     }
   ],
