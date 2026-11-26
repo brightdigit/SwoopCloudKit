@@ -1,0 +1,50 @@
+//
+//  CloudKitRestoreImageMappingError.swift
+//  SwoopCloudKit
+//
+//  Created by Leo Dion.
+//  Copyright © 2025 BrightDigit.
+//
+//  Permission is hereby granted, free of charge, to any person
+//  obtaining a copy of this software and associated documentation
+//  files (the “Software”), to deal in the Software without
+//  restriction, including without limitation the rights to use,
+//  copy, modify, merge, publish, distribute, sublicense, and/or
+//  sell copies of the Software, and to permit persons to whom the
+//  Software is furnished to do so, subject to the following
+//  conditions:
+//
+//  The above copyright notice and this permission notice shall be
+//  included in all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,
+//  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+//  OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+//  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+//  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+//  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+//  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+//  OTHER DEALINGS IN THE SOFTWARE.
+//
+
+/// A failure encountered while mapping a `CKRecord` to a `RestoreImageRecord`.
+public enum CloudKitRestoreImageMappingError: Error, Sendable {
+  /// A field required by `RestoreImageRecord` was absent from the record.
+  case missingField(String)
+
+  /// The `downloadURL` field was present but not a parseable URL.
+  ///
+  /// - Note: `downloadURL` is a `STRING` in `schema.ckdb`, not a `CKAsset`.
+  case invalidDownloadURL(String)
+
+  /// A short explanation suitable for display.
+  public var reason: String {
+    switch self {
+    case .missingField(let field):
+      "missing field \"\(field)\""
+
+    case .invalidDownloadURL(let value):
+      "downloadURL is not a valid URL: \"\(value)\""
+    }
+  }
+}

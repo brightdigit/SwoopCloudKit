@@ -1,0 +1,614 @@
+{
+  "fetchedAt": "2026-11-17T00:00:00Z",
+  "sdkVersions": [],
+  "simulatorRuntimes": [
+    {
+      "buildNumber": "23F77",
+      "platform": "iOS",
+      "releaseLabel": "Final",
+      "sdkBuildNumbers": [
+        "23F73",
+        "23F81a"
+      ],
+      "version": "26.5"
+    },
+    {
+      "buildNumber": "24A5355p",
+      "platform": "iOS",
+      "releaseLabel": "Beta 1",
+      "sdkBuildNumbers": [
+        "24A5355p"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24A5370g",
+      "platform": "iOS",
+      "releaseLabel": "Beta 2",
+      "sdkBuildNumbers": [
+        "24A5370g"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24A5380g",
+      "platform": "iOS",
+      "releaseLabel": "Beta 3",
+      "sdkBuildNumbers": [
+        "24A5380g"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24A5380i",
+      "platform": "iOS",
+      "releaseLabel": "Beta 3",
+      "sdkBuildNumbers": [
+        "24A5380g"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24A5390f",
+      "platform": "iOS",
+      "releaseLabel": "Beta 4",
+      "sdkBuildNumbers": [
+        "24A5390e"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24A5408d",
+      "platform": "iOS",
+      "releaseLabel": "Beta 5",
+      "sdkBuildNumbers": [
+        "24A5408c"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24A5423a",
+      "platform": "iOS",
+      "releaseLabel": "Beta 6",
+      "sdkBuildNumbers": [
+        "24A5422a"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24A434",
+      "platform": "iOS",
+      "releaseLabel": "Final",
+      "sdkBuildNumbers": [
+        "24A430",
+        "24A94232",
+        "24A94403"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24A94401",
+      "platform": "iOS",
+      "releaseLabel": "Beta 1",
+      "sdkBuildNumbers": [
+        "24A94403"
+      ],
+      "version": "27.1"
+    },
+    {
+      "buildNumber": "24A94232",
+      "platform": "iOS",
+      "releaseLabel": "RC 1",
+      "sdkBuildNumbers": [
+        "24A94232"
+      ],
+      "version": "27.1"
+    },
+    {
+      "buildNumber": "24A94425",
+      "platform": "iOS",
+      "releaseLabel": "Final",
+      "sdkBuildNumbers": [
+        "24A94232"
+      ],
+      "version": "27.1"
+    },
+    {
+      "buildNumber": "24B5084k",
+      "platform": "iOS",
+      "releaseLabel": "Beta 1",
+      "sdkBuildNumbers": [
+        "24B5084k"
+      ],
+      "version": "27.2"
+    },
+    {
+      "buildNumber": "24B5089g",
+      "platform": "iOS",
+      "releaseLabel": "Beta 2",
+      "sdkBuildNumbers": [
+        "24B5089g"
+      ],
+      "version": "27.2"
+    },
+    {
+      "buildNumber": "24B5110a",
+      "platform": "iOS",
+      "releaseLabel": "Beta 4",
+      "sdkBuildNumbers": [
+        "24B5109a"
+      ],
+      "version": "27.2"
+    },
+    {
+      "buildNumber": "24B91011",
+      "platform": "iOS",
+      "releaseLabel": "Beta 4",
+      "sdkBuildNumbers": [
+        "24B5109a"
+      ],
+      "version": "27.2"
+    },
+    {
+      "buildNumber": "24B114",
+      "platform": "iOS",
+      "releaseLabel": "RC 1",
+      "sdkBuildNumbers": [
+        "24B113"
+      ],
+      "version": "27.2"
+    },
+    {
+      "buildNumber": "24B91014",
+      "platform": "iOS",
+      "releaseLabel": "RC 1",
+      "sdkBuildNumbers": [
+        "24B113"
+      ],
+      "version": "27.2"
+    },
+    {
+      "buildNumber": "24B8117",
+      "platform": "iOS",
+      "releaseLabel": "Final",
+      "sdkBuildNumbers": [
+        "24B8118"
+      ],
+      "version": "27.2"
+    },
+    {
+      "buildNumber": "24B91016s",
+      "platform": "iOS",
+      "releaseLabel": "Final",
+      "sdkBuildNumbers": [
+        "24B113",
+        "24B8118"
+      ],
+      "version": "27.2"
+    },
+    {
+      "buildNumber": "24C5037i",
+      "platform": "iOS",
+      "releaseLabel": "Beta 1",
+      "sdkBuildNumbers": [
+        "24C5037e"
+      ],
+      "version": "27.3"
+    },
+    {
+      "buildNumber": "24C5049d",
+      "platform": "iOS",
+      "releaseLabel": "Beta 2",
+      "sdkBuildNumbers": [
+        "24C5049b"
+      ],
+      "version": "27.3"
+    },
+    {
+      "buildNumber": "23L470",
+      "platform": "tvOS",
+      "releaseLabel": "Final",
+      "sdkBuildNumbers": [
+        "23L470"
+      ],
+      "version": "26.5"
+    },
+    {
+      "buildNumber": "24J5289o",
+      "platform": "tvOS",
+      "releaseLabel": "Beta 1",
+      "sdkBuildNumbers": [
+        "24J5289o"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24J5305f",
+      "platform": "tvOS",
+      "releaseLabel": "Beta 2",
+      "sdkBuildNumbers": [
+        "24J5305f"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24J5315h",
+      "platform": "tvOS",
+      "releaseLabel": "Beta 3",
+      "sdkBuildNumbers": [
+        "24J5315h"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24J5325d",
+      "platform": "tvOS",
+      "releaseLabel": "Beta 4",
+      "sdkBuildNumbers": [
+        "24J5325d"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24J5346a",
+      "platform": "tvOS",
+      "releaseLabel": "Beta 5",
+      "sdkBuildNumbers": [
+        "24J5346a"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24J5356a",
+      "platform": "tvOS",
+      "releaseLabel": "Beta 6",
+      "sdkBuildNumbers": [
+        "24J5356a"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24J360",
+      "platform": "tvOS",
+      "releaseLabel": "Final",
+      "sdkBuildNumbers": [
+        "24J360"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24K5088l",
+      "platform": "tvOS",
+      "releaseLabel": "Beta 1",
+      "sdkBuildNumbers": [
+        "24K5088l"
+      ],
+      "version": "27.2"
+    },
+    {
+      "buildNumber": "24K5093g",
+      "platform": "tvOS",
+      "releaseLabel": "Beta 2",
+      "sdkBuildNumbers": [
+        "24K5093g"
+      ],
+      "version": "27.2"
+    },
+    {
+      "buildNumber": "24K118",
+      "platform": "tvOS",
+      "releaseLabel": "RC 1",
+      "sdkBuildNumbers": [
+        "24K117"
+      ],
+      "version": "27.2"
+    },
+    {
+      "buildNumber": "24K150",
+      "platform": "tvOS",
+      "releaseLabel": "Final",
+      "sdkBuildNumbers": [
+        "24K122"
+      ],
+      "version": "27.2"
+    },
+    {
+      "buildNumber": "24K5286g",
+      "platform": "tvOS",
+      "releaseLabel": "Beta 1",
+      "sdkBuildNumbers": [
+        "24K5286e"
+      ],
+      "version": "27.3"
+    },
+    {
+      "buildNumber": "24K5298d",
+      "platform": "tvOS",
+      "releaseLabel": "Beta 2",
+      "sdkBuildNumbers": [
+        "24K5298b"
+      ],
+      "version": "27.3"
+    },
+    {
+      "buildNumber": "23O470",
+      "platform": "visionOS",
+      "releaseLabel": "Final",
+      "sdkBuildNumbers": [
+        "23O469"
+      ],
+      "version": "26.5"
+    },
+    {
+      "buildNumber": "24M5291p",
+      "platform": "visionOS",
+      "releaseLabel": "Beta 1",
+      "sdkBuildNumbers": [
+        "24M5291p"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24M5306g",
+      "platform": "visionOS",
+      "releaseLabel": "Beta 2",
+      "sdkBuildNumbers": [
+        "24M5306g"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24M5316i",
+      "platform": "visionOS",
+      "releaseLabel": "Beta 3",
+      "sdkBuildNumbers": [
+        "24M5316i"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24M5326f",
+      "platform": "visionOS",
+      "releaseLabel": "Beta 4",
+      "sdkBuildNumbers": [
+        "24M5326e"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24M5348a",
+      "platform": "visionOS",
+      "releaseLabel": "Beta 5",
+      "sdkBuildNumbers": [
+        "24M5347a"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24M5357a",
+      "platform": "visionOS",
+      "releaseLabel": "Beta 6",
+      "sdkBuildNumbers": [
+        "24M5357a"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24M362",
+      "platform": "visionOS",
+      "releaseLabel": "Final",
+      "sdkBuildNumbers": [
+        "24M361"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24N5088l",
+      "platform": "visionOS",
+      "releaseLabel": "Beta 1",
+      "sdkBuildNumbers": [
+        "24N5088l"
+      ],
+      "version": "27.2"
+    },
+    {
+      "buildNumber": "24N5093f",
+      "platform": "visionOS",
+      "releaseLabel": "Beta 2",
+      "sdkBuildNumbers": [
+        "24N5093f"
+      ],
+      "version": "27.2"
+    },
+    {
+      "buildNumber": "24N5114a",
+      "platform": "visionOS",
+      "releaseLabel": "Beta 4",
+      "sdkBuildNumbers": [
+        "24N5112a"
+      ],
+      "version": "27.2"
+    },
+    {
+      "buildNumber": "24N118",
+      "platform": "visionOS",
+      "releaseLabel": "RC 1",
+      "sdkBuildNumbers": [
+        "24N117"
+      ],
+      "version": "27.2"
+    },
+    {
+      "buildNumber": "24N120",
+      "platform": "visionOS",
+      "releaseLabel": "Final",
+      "sdkBuildNumbers": [
+        "24N120"
+      ],
+      "version": "27.2"
+    },
+    {
+      "buildNumber": "24N5286r",
+      "platform": "visionOS",
+      "releaseLabel": "Beta 1",
+      "sdkBuildNumbers": [
+        "24N5286e"
+      ],
+      "version": "27.3"
+    },
+    {
+      "buildNumber": "24N5298d",
+      "platform": "visionOS",
+      "releaseLabel": "Beta 2",
+      "sdkBuildNumbers": [
+        "24N5298b"
+      ],
+      "version": "27.3"
+    },
+    {
+      "buildNumber": "21T575",
+      "platform": "watchOS",
+      "releaseLabel": "Final",
+      "sdkBuildNumbers": [
+        "21T569"
+      ],
+      "version": "10.5"
+    },
+    {
+      "buildNumber": "23T570",
+      "platform": "watchOS",
+      "releaseLabel": "Final",
+      "sdkBuildNumbers": [
+        "23T570"
+      ],
+      "version": "26.5"
+    },
+    {
+      "buildNumber": "24R5289n",
+      "platform": "watchOS",
+      "releaseLabel": "Beta 1",
+      "sdkBuildNumbers": [
+        "24R5289n"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24R5305f",
+      "platform": "watchOS",
+      "releaseLabel": "Beta 2",
+      "sdkBuildNumbers": [
+        "24R5305f"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24R5315h",
+      "platform": "watchOS",
+      "releaseLabel": "Beta 3",
+      "sdkBuildNumbers": [
+        "24R5315h"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24R5325f",
+      "platform": "watchOS",
+      "releaseLabel": "Beta 4",
+      "sdkBuildNumbers": [
+        "24R5325e"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24R5347a",
+      "platform": "watchOS",
+      "releaseLabel": "Beta 5",
+      "sdkBuildNumbers": [
+        "24R5346a"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24R5355a",
+      "platform": "watchOS",
+      "releaseLabel": "Beta 6",
+      "sdkBuildNumbers": [
+        "24R5355a"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24R362",
+      "platform": "watchOS",
+      "releaseLabel": "Final",
+      "sdkBuildNumbers": [
+        "24R360"
+      ],
+      "version": "27.0"
+    },
+    {
+      "buildNumber": "24S5086l",
+      "platform": "watchOS",
+      "releaseLabel": "Beta 1",
+      "sdkBuildNumbers": [
+        "24S5086l"
+      ],
+      "version": "27.2"
+    },
+    {
+      "buildNumber": "24S5091f",
+      "platform": "watchOS",
+      "releaseLabel": "Beta 2",
+      "sdkBuildNumbers": [
+        "24S5091f"
+      ],
+      "version": "27.2"
+    },
+    {
+      "buildNumber": "24S5112a",
+      "platform": "watchOS",
+      "releaseLabel": "Beta 4",
+      "sdkBuildNumbers": [
+        "24S5110a"
+      ],
+      "version": "27.2"
+    },
+    {
+      "buildNumber": "24S116",
+      "platform": "watchOS",
+      "releaseLabel": "RC 1",
+      "sdkBuildNumbers": [
+        "24S115"
+      ],
+      "version": "27.2"
+    },
+    {
+      "buildNumber": "24S118",
+      "platform": "watchOS",
+      "releaseLabel": "Final",
+      "sdkBuildNumbers": [
+        "24S118"
+      ],
+      "version": "27.2"
+    },
+    {
+      "buildNumber": "24S5284h",
+      "platform": "watchOS",
+      "releaseLabel": "Beta 1",
+      "sdkBuildNumbers": [
+        "24S5284e"
+      ],
+      "version": "27.3"
+    },
+    {
+      "buildNumber": "24S5296d",
+      "platform": "watchOS",
+      "releaseLabel": "Beta 2",
+      "sdkBuildNumbers": [
+        "24S5296b"
+      ],
+      "version": "27.3"
+    }
+  ],
+  "xcodeVersions": []
+}

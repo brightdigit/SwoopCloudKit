@@ -1,0 +1,8 @@
+version: 1
+builder:
+  configs:
+    # CloudKitReleaseCatalog and the record mappings only compile where
+    # CloudKit exists, so the docs are built on macOS.
+    - documentation_targets: [SwoopCloudKit]
+      platform: macos-spm
+      swift_version: 6.4
