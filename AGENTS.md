@@ -27,7 +27,7 @@ SwoopMistKit writes the database; Stewed and Bushel read it through this package
 
 ## Branches and the SwoopKit dependency
 
-The `simulator` branch is Stewed's working branch and depends on SwoopKit's `simulator` branch by URL (`Package.resolved` pins the revision; `swift package update` moves it). `main` uses a SwoopKit version.
+The `simulator` branch is Stewed's working branch. It depends on SwoopKit `from: "1.0.0-beta.1"`; between releases it can point at SwoopKit's `simulator` branch by URL instead (`Package.resolved` pins the revision; `swift package update` moves it). `main` uses a SwoopKit version.
 
 ## Commands
 

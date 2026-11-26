@@ -24,9 +24,7 @@ let package = Package(
     .library(name: "SwoopCloudKit", targets: ["SwoopCloudKit"])
   ],
   dependencies: [
-    // `simulator` branch overlay: build against SwoopKit's `simulator` branch.
-    // Upstream `main` uses the SwoopKit URL instead.
-    .package(url: "https://github.com/brightdigit/SwoopKit.git", branch: "simulator")
+    .package(url: "https://github.com/brightdigit/SwoopKit.git", from: "1.0.0-beta.1")
   ],
   targets: [
     .target(

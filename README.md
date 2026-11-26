@@ -96,7 +96,7 @@ Lint tools are pinned in `mise.toml`. See `AGENTS.md` for the package's rules.
 
 ## Branches
 
-- `main`: releases. It depends on SwoopKit `from: "1.0.0-alpha.1"`.
+- `main`: releases. It depends on SwoopKit `from: "1.0.0-beta.1"`.
 - `simulator`: Stewed's working branch. Between releases it can depend on SwoopKit's `simulator` branch instead.
 
 ## License
