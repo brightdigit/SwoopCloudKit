@@ -7,7 +7,7 @@
 
 **Full Changelog**: https://github.com/brightdigit/SwoopCloudKit/compare/1.0.0-beta.1...1.0.0-beta.2
 
-## 1.0.0-alpha.1
+## 1.0.0-beta.1
 
 The first release of SwoopCloudKit (formerly BushelCatalog): a read-only reader for the public CloudKit database of `iCloud.com.brightdigit.Swoop`, using native `CloudKit.framework`, that maps each `CKRecord` onto the SwoopKit records SwoopMistKit writes. It needs no API token or server-to-server key; access comes from the app's iCloud entitlement. It depends on [SwoopKit](https://github.com/brightdigit/SwoopKit) `from: "1.0.0-beta.1"`, and this release adds iOS, watchOS, tvOS, visionOS and Mac Catalyst to macOS and Linux. It's an alpha: the API may still change before 1.0.0. Add it with `.package(url: "https://github.com/brightdigit/SwoopCloudKit.git", from: "1.0.0-alpha.1")` and the `SwoopCloudKit` product.
 
