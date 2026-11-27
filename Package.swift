@@ -24,7 +24,7 @@ let package = Package(
     .library(name: "SwoopCloudKit", targets: ["SwoopCloudKit"])
   ],
   dependencies: [
-    .package(url: "https://github.com/brightdigit/SwoopKit.git", from: "1.0.0-beta.1")
+    .package(url: "https://github.com/brightdigit/SwoopKit.git", from: "1.0.0-beta.2")
   ],
   targets: [
     .target(

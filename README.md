@@ -68,12 +68,12 @@ A development-signed build reads the container's Development environment; a Deve
 
 These build everywhere: they're outside `#if canImport(CloudKit)`.
 
-- `ReleaseDataSnapshot`: `SDKVersion`, `XcodeVersion` and `SimulatorRuntime` records with the `fetchedAt` date of the fetch. JSON with ISO 8601 dates; a file without `simulatorRuntimes` decodes with none. `init(json:)` reads one, such as an app's bundled snapshot.
+- `ReleaseDataSnapshot` (in SwoopKit since 1.0.0-beta.2; SwoopCloudKit re-exports SwoopKit, so `import SwoopCloudKit` still brings it in): `SDKVersion`, `XcodeVersion` and `SimulatorRuntime` records with the `fetchedAt` date of the fetch. JSON with ISO 8601 dates; a file without `simulatorRuntimes` decodes with none. `init(json:)` reads one, such as an app's bundled snapshot.
 - `ReleaseDataCacheFile`: a disk cache's contents, the snapshot plus `formatVersion` (currently 1). `decode(_:)` checks the version before decoding records and throws a typed `ReleaseDataCacheError`. Where the file lives is up to the app.
 - `CloudKitReleaseCatalog.fetchSnapshot(now:)` fetches `SDKVersion`, `XcodeVersion` and `SimulatorRuntime` into a snapshot. An environment without the `SimulatorRuntime` record type (`CKError.unknownItem`) gives a snapshot with no runtime records instead of failing.
-- `JSONDecoder.iso8601`, `JSONDecoder.decodeValue(_:from:)` (typed throws), `JSONEncoder.iso8601PrettySorted` and `JSONEncoder.encodeAsserting(_:)`, the coders the files use.
+- `JSONEncoder.encodeAsserting(_:)`, plus SwoopKit's `JSONDecoder.iso8601`, `JSONDecoder.decodeValue(_:from:)` (typed throws) and `JSONEncoder.iso8601PrettySorted`: the coders the files use.
 
-Moved from Stewed's StewedKit (Stewed #124). The JSON is unchanged: `Tests/SwoopCloudKitTests/Resources/release-data/cache-format-1.json` was written by Stewed's code before the move, and the tests check that it decodes and re-encodes to the same bytes.
+Moved from Stewed's StewedKit (Stewed #124); the snapshot and the three SwoopKit coders then moved down to SwoopKit so SwoopMistKit can write the same JSON (Stewed #194). The JSON is unchanged: `Tests/SwoopCloudKitTests/Resources/release-data/cache-format-1.json` was written by Stewed's code before the move, and the tests check that it decodes and re-encodes to the same bytes.
 
 Tests (`swift test`) cover the `CKRecord` mappings with hand-built records, and the snapshot and cache file with the JSON fixtures in `Tests/SwoopCloudKitTests/Resources/release-data/` (copies of Stewed's `docs/fixtures/release-data/`). They never open a `CKContainer`, which traps without the iCloud entitlement, so they need no iCloud account or network.
 
@@ -96,7 +96,7 @@ Lint tools are pinned in `mise.toml`. See `AGENTS.md` for the package's rules.
 
 ## Branches
 
-- `main`: releases. It depends on SwoopKit `from: "1.0.0-beta.1"`.
+- `main`: releases. It depends on SwoopKit `from: "1.0.0-beta.2"`.
 - `simulator`: Stewed's working branch. Between releases it can depend on SwoopKit's `simulator` branch instead.
 
 ## License

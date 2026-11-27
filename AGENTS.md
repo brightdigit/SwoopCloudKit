@@ -8,7 +8,7 @@ SwoopCloudKit is the read side of the Swoop release-data packages. It queries th
 
 - `CloudKitReleaseCatalog` reads `SDKVersion`, `XcodeVersion` and `SimulatorRuntime` (every page; unmappable records come back as `CloudKitRecordSkip`s, not failures), checks the iCloud account (`CloudKitAccountStatus`), and builds a `ReleaseDataSnapshot` (`fetchSnapshot(now:)`).
 - `CloudKitRestoreImageService` lists `RestoreImage` records for Bushel (one page).
-- `ReleaseDataSnapshot`, `ReleaseDataCacheFile` and the JSON coder extensions turn release data into stable JSON for a disk cache or a bundled snapshot.
+- `ReleaseDataCacheFile` and `JSONEncoder.encodeAsserting(_:)` turn release data into stable JSON for a disk cache. `ReleaseDataSnapshot` and the ISO 8601 coders (`JSONEncoder.iso8601PrettySorted`, `JSONDecoder.iso8601`, `JSONDecoder.decodeValue(_:from:)`) live in SwoopKit since 1.0.0-beta.2; `Exports.swift` re-exports SwoopKit (`@_exported public import SwoopKit`) so `import SwoopCloudKit` still brings them in. Don't re-add copies here: modules importing both packages would get ambiguous-member errors.
 
 SwoopMistKit writes the database; Stewed and Bushel read it through this package.
 
@@ -27,7 +27,7 @@ SwoopMistKit writes the database; Stewed and Bushel read it through this package
 
 ## Branches and the SwoopKit dependency
 
-The `simulator` branch is Stewed's working branch. It depends on SwoopKit `from: "1.0.0-beta.1"`; between releases it can point at SwoopKit's `simulator` branch by URL instead (`Package.resolved` pins the revision; `swift package update` moves it). `main` uses a SwoopKit version.
+The `simulator` branch is Stewed's working branch. It depends on SwoopKit `from: "1.0.0-beta.2"`; between releases it can point at SwoopKit's `simulator` branch by URL instead (`Package.resolved` pins the revision; `swift package update` moves it). `main` uses a SwoopKit version.
 
 ## Commands
 

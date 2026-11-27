@@ -9,9 +9,9 @@ iCloud. SwoopCloudKit gives you two JSON formats for that. Both build on every p
 SwoopKit does, without CloudKit, so a command-line tool on Linux can read and write
 them too.
 
-- ``ReleaseDataSnapshot``: the `SDKVersion`, `XcodeVersion` and `SimulatorRuntime`
-  records with ``ReleaseDataSnapshot/fetchedAt``, the date they were fetched from
-  CloudKit. Use it for a snapshot bundled in an app.
+- `ReleaseDataSnapshot` (from SwoopKit, re-exported here): the `SDKVersion`,
+  `XcodeVersion` and `SimulatorRuntime` records with `fetchedAt`, the date they were
+  fetched from CloudKit. Use it for a snapshot bundled in an app.
 - ``ReleaseDataCacheFile``: a snapshot plus a `formatVersion`, for a disk cache that an
   older or newer build might find.
 
@@ -50,7 +50,7 @@ way an older build can't read. Adding a field that decodes as empty when missing
 ### Bundle a snapshot
 
 A snapshot bundled in the app gives a fresh install release data before its first
-fetch. Read it with ``ReleaseDataSnapshot/init(json:)``:
+fetch. Read it with `ReleaseDataSnapshot.init(json:)`:
 
 ```swift
 if let url = Bundle.main.url(
@@ -62,13 +62,13 @@ if let url = Bundle.main.url(
 ```
 
 Write one with the same encoder the cache file uses,
-``Foundation/JSONEncoder/iso8601PrettySorted``, so the file is stable and diffable
+`JSONEncoder.iso8601PrettySorted`, so the file is stable and diffable
 between exports.
 
 ### Choose the newer data
 
 When an app has both a cache and a bundled snapshot, compare their
-``ReleaseDataSnapshot/fetchedAt`` dates and start from the later one. Always use
+`fetchedAt` dates and start from the later one. Always use
 `fetchedAt`, never a file's modification date: copying or installing a file changes its
 modification date, not the age of its records.
 
@@ -82,9 +82,9 @@ with no runtime records.
 
 The coders are public so other tools can match the format:
 
-- ``Foundation/JSONEncoder/iso8601PrettySorted`` and
-  ``Foundation/JSONDecoder/iso8601`` return a new, configured coder on every call.
-- ``Foundation/JSONDecoder/decodeValue(_:from:)`` decodes with a typed
+- SwoopKit's `JSONEncoder.iso8601PrettySorted` and `JSONDecoder.iso8601` return a
+  new, configured coder on every call.
+- SwoopKit's `JSONDecoder.decodeValue(_:from:)` decodes with a typed
   `DecodingError`.
 - ``Foundation/JSONEncoder/encodeAsserting(_:)`` encodes a value whose type can't fail
   to encode, and asserts if it does.

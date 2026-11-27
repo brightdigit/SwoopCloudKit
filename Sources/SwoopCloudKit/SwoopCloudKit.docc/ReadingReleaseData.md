@@ -88,7 +88,7 @@ reported one.
 ### Fetch everything as a snapshot
 
 ``CloudKitReleaseCatalog/fetchSnapshot(now:)`` fetches `SDKVersion`, then
-`XcodeVersion`, then `SimulatorRuntime`, and returns a ``ReleaseDataSnapshot`` stamped
+`XcodeVersion`, then `SimulatorRuntime`, and returns a `ReleaseDataSnapshot` stamped
 with the date you pass. Skipped records are left out of the snapshot.
 
 One failure is tolerated: if the environment's schema has no `SimulatorRuntime` record
