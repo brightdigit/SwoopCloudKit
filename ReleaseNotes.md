@@ -1,3 +1,12 @@
+## 1.0.0-beta.2
+
+`ReleaseDataSnapshot` and its JSON coders moved down to SwoopKit 1.0.0-beta.2, so SwoopMistKit can write the same snapshot JSON that SwoopCloudKit reads. SwoopCloudKit now re-exports SwoopKit, so code that only does `import SwoopCloudKit` keeps compiling unchanged.
+
+* `ReleaseDataSnapshot`, `JSONEncoder.iso8601PrettySorted`, `JSONDecoder.iso8601` and `JSONDecoder.decodeValue(_:from:)` now come from SwoopKit, unchanged and with the same JSON; SwoopCloudKit's copies are removed so a module importing both packages has no ambiguous members. SwoopCloudKit re-exports SwoopKit (`@_exported public import SwoopKit`), so `import SwoopCloudKit` code, including `SwoopCloudKit.ReleaseDataSnapshot`, still compiles. `ReleaseDataCacheFile` and `JSONEncoder.encodeAsserting(_:)` stay here (brightdigit/Stewed#194) by @leogdion in https://github.com/brightdigit/SwoopCloudKit/pull/2
+* Depend on SwoopKit `from: "1.0.0-beta.2"` (brightdigit/Stewed#194) by @leogdion in https://github.com/brightdigit/SwoopCloudKit/pull/2
+
+**Full Changelog**: https://github.com/brightdigit/SwoopCloudKit/compare/1.0.0-beta.1...1.0.0-beta.2
+
 ## 1.0.0-alpha.1
 
 The first release of SwoopCloudKit (formerly BushelCatalog): a read-only reader for the public CloudKit database of `iCloud.com.brightdigit.Swoop`, using native `CloudKit.framework`, that maps each `CKRecord` onto the SwoopKit records SwoopMistKit writes. It needs no API token or server-to-server key; access comes from the app's iCloud entitlement. It depends on [SwoopKit](https://github.com/brightdigit/SwoopKit) `from: "1.0.0-beta.1"`, and this release adds iOS, watchOS, tvOS, visionOS and Mac Catalyst to macOS and Linux. It's an alpha: the API may still change before 1.0.0. Add it with `.package(url: "https://github.com/brightdigit/SwoopCloudKit.git", from: "1.0.0-alpha.1")` and the `SwoopCloudKit` product.

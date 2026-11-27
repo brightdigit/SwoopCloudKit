@@ -33,10 +33,14 @@ The package has two halves:
   `XcodeVersion` and `SimulatorRuntime` record types, and
   ``CloudKitRestoreImageService`` lists `RestoreImage` records. They compile only where
   CloudKit is available. See <doc:ReadingReleaseData>.
-- **Release data on disk.** ``ReleaseDataSnapshot`` and ``ReleaseDataCacheFile`` turn
-  fetched records into stable JSON and back, for a disk cache or a snapshot bundled in
-  an app. They depend only on Foundation and SwoopKit, so they build on every platform
-  SwoopKit does, Linux included. See <doc:CachingReleaseData>.
+- **Release data on disk.** SwoopKit's `ReleaseDataSnapshot` and
+  ``ReleaseDataCacheFile`` turn fetched records into stable JSON and back, for a disk
+  cache or a snapshot bundled in an app. They depend only on Foundation and SwoopKit,
+  so they build on every platform SwoopKit does, Linux included. See
+  <doc:CachingReleaseData>.
+
+SwoopCloudKit re-exports SwoopKit, so `import SwoopCloudKit` also brings in the record
+models, `ReleaseDataSnapshot` and SwoopKit's JSON coders.
 
 ## Topics
 
@@ -62,7 +66,6 @@ The package has two halves:
 
 ### Snapshots and cache files
 
-- ``ReleaseDataSnapshot``
 - ``ReleaseDataCacheFile``
 - ``ReleaseDataCacheError``
 
@@ -76,7 +79,4 @@ The package has two halves:
 
 ### JSON coding
 
-- ``Foundation/JSONDecoder/iso8601``
-- ``Foundation/JSONDecoder/decodeValue(_:from:)``
-- ``Foundation/JSONEncoder/iso8601PrettySorted``
 - ``Foundation/JSONEncoder/encodeAsserting(_:)``

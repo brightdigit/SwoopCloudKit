@@ -88,7 +88,7 @@
     /// example Production before its schema is deployed) gives a snapshot
     /// with no runtime records instead of failing, and is logged.
     ///
-    /// - Parameter now: The snapshot's ``ReleaseDataSnapshot/fetchedAt``.
+    /// - Parameter now: The snapshot's `ReleaseDataSnapshot.fetchedAt`.
     /// - Returns: The records, as a snapshot.
     /// - Throws: ``CloudKitCatalogError`` when any other query failure
     ///   happens, including when the user isn't signed in to iCloud or is

@@ -30,7 +30,7 @@
 public import Foundation
 public import SwoopKit
 
-/// A release-data disk cache's contents: a ``ReleaseDataSnapshot`` plus a
+/// A release-data disk cache's contents: a `ReleaseDataSnapshot` plus a
 /// `formatVersion`, as JSON.
 ///
 /// Bump ``currentFormatVersion`` when the snapshot or record layout
@@ -101,7 +101,7 @@ public struct ReleaseDataCacheFile: Sendable, Codable {
   /// The JSON for `snapshot` in the current format.
   ///
   /// The JSON is pretty-printed with sorted keys and ISO 8601 dates
-  /// (``Foundation/JSONEncoder/iso8601PrettySorted``), so it's stable and
+  /// (SwoopKit's `JSONEncoder.iso8601PrettySorted`), so it's stable and
   /// diffable.
   ///
   /// - Parameter snapshot: The snapshot to encode.
